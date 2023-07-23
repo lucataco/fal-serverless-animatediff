@@ -84,7 +84,7 @@ def model():
 @isolated(
     kind="conda",
     env_yml="env.yml",
-    machine_type="GPU-T4",
+    machine_type="GPU",
     exposed_port=8080,
     keep_alive=300
 )
@@ -93,9 +93,6 @@ def generate(prompt: str, neg_prompt: str, steps: int, guidance_scale: float):
     import sys
     import torch
     from safetensors import safe_open
-    # from diffusers import AutoencoderKL, DDIMScheduler
-    # from transformers import CLIPTextModel, CLIPTokenizer
-    # from diffusers.utils.import_utils import is_xformers_available
 
     # Download models
     clone_repo()
